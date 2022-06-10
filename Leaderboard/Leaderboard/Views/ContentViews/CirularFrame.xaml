@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Leaderboard.Views.ContentViews.CirularFrame"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Name="this">
+  <ContentView.Content>
+        <xct:BadgeView VerticalOptions="End" 
+                       HorizontalOptions="End"
+                FontAttributes="Bold"
+                FontSize="Medium"            
+                Text="{Binding BadgeValue,Source={x:Reference this}}">
+            <Frame x:Name="circleFrame" HasShadow="True" HeightRequest="100"  WidthRequest="100"
+               Padding="2" Margin="0" CornerRadius="{Binding CornerRadius, Source={x:Reference this}}"
+               VerticalOptions="Center" IsClippedToBounds="true"
+               HorizontalOptions="Center" BackgroundColor="#000000">
+                <Image x:Name="circleImg" Source="{Binding Source, Source={x:Reference this}}" 
+                   WidthRequest="{Binding ImageWidth, Source={x:Reference this}}"
+                   HeightRequest="{Binding ImageHeight, Source={x:Reference this}}"/>
+            </Frame>
+        </xct:BadgeView>
+       
+    </ContentView.Content>
+    
+    
+    
+</ContentView>

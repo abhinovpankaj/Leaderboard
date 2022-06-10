@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:control="clr-namespace:Leaderboard.Views.ContentViews"
+             x:Class="Leaderboard.Views.LeaderboardsPage"
+             xmlns:model="clr-namespace:Leaderboard.Models"
+             xmlns:helper="clr-namespace:Leaderboard.Helpers"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             Shell.NavBarIsVisible="True">
+    <Shell.TitleView>
+        <Image Source="xamarin_logo.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,auto,auto,*" 
+              VerticalOptions="Fill"
+              Margin="10,5">
+            <Grid ColumnDefinitions="*,*,*" HorizontalOptions="FillAndExpand"
+                  Margin="2,10">
+                <Frame HasShadow="True" Padding="0" xct:ShadowEffect.Color="Black"                        
+                        VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       CornerRadius="10" Margin="2"  >
+                    <Button Text="Deze Week" Padding="0" FontSize="Micro" 
+                            Margin="0,-10"
+                            VerticalOptions="Center" HorizontalOptions="Center">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <Trigger TargetType="Button" Property="Grid.Column" Value="0">
+                                        <Setter Property="BackgroundColor" Value="LightGray" />
+                                        <Setter Property="TextColor" Value="Black" />
+                                       
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    
+                </Frame>
+                <Frame HasShadow="False" Padding="0" xct:ShadowEffect.Color="Black"
+                       Grid.Column="1"
+                        VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       CornerRadius="10" Margin="2"  >
+                    <Button Text="Deze Maand" Padding="0" FontSize="Micro" 
+                            Margin="0,-10"
+                            VerticalOptions="Center" HorizontalOptions="Center"
+                            />
+                </Frame>
+                <Frame HasShadow="False" Padding="0" xct:ShadowEffect.Color="Black"
+                       Grid.Column="2"
+                        VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="CenterAndExpand"
+                       CornerRadius="10" Margin="2"  >
+                    <Button Text="Altijd" Padding="0" FontSize="Micro" 
+                            Margin="0,-10"
+                            VerticalOptions="Center" HorizontalOptions="Center"
+                            />
+                </Frame>
+                
+            </Grid>
+
+            <Grid ColumnDefinitions=".3*,.4*,.3*" Grid.Row="1">
+               
+                <Grid VerticalOptions="End" >
+                    <Frame HasShadow="False" CornerRadius="55" Padding="4"
+                       VerticalOptions="End"                           
+                           BackgroundColor="LightGray">
+                        <Frame HasShadow="False" CornerRadius="50" 
+                               BackgroundColor="White" Padding="0">
+                            <Grid>
+                                <Image x:Name="circleImg" Source="spongbob.png"
+                                       ScaleX="1.5" ScaleY="1.5"/>
+                            </Grid>
+
+
+                        </Frame>
+                    </Frame>
+                    <Frame  HorizontalOptions="End" 
+                             VerticalOptions="End" Margin="3" CornerRadius="30"  Padding="10,5"                            >
+                        <Label Text="2" VerticalOptions="Center" HorizontalOptions="Center"
+                               FontAttributes="Bold" TextColor="Black"/>
+                    </Frame>
+                </Grid>
+
+                <Grid RowDefinitions="auto,auto" Margin="0,0,0,40"
+                      RowSpacing="0"
+                      Grid.Column="1" VerticalOptions="Start">
+                    <Image  HorizontalOptions="CenterAndExpand"
+            Source="crown.png" HeightRequest="70"
+                Aspect="AspectFit"/>
+                    <Grid Grid.Row="1">
+                        <Frame HasShadow="False" CornerRadius="75" Padding="4"                            
+                        BackgroundColor="LightGray">
+                            <Frame HasShadow="False" CornerRadius="70" 
+                            BackgroundColor="White" Padding="0">
+                                <Image x:Name="circleImg1" Source="spongbob.png"
+                                    ScaleX="1.5" ScaleY="1.5"/>
+                            </Frame>
+                        </Frame>
+                        <Frame  HorizontalOptions="End" 
+                             VerticalOptions="End" Margin="3" CornerRadius="30"  Padding="10,5"                            >
+                            <Label Text="1" VerticalOptions="Center" HorizontalOptions="Center"
+                               FontAttributes="Bold" TextColor="Black"/>
+                        </Frame>
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Column="2" VerticalOptions="End">
+                    <Frame HasShadow="False" CornerRadius="55" Padding="4"
+                       VerticalOptions="End"                           
+                           BackgroundColor="LightGray">
+                        <Frame HasShadow="False" CornerRadius="50" 
+                               BackgroundColor="White" Padding="0">
+                            <Grid>
+                                <Image x:Name="circleImg3" Source="spongbob.png"
+                                       ScaleX="1.5" ScaleY="1.5"/>
+                            </Grid>
+
+
+                        </Frame>
+                    </Frame>
+                    <Frame  HorizontalOptions="End" 
+                             VerticalOptions="End" Margin="3" CornerRadius="30"  Padding="10,5"                            >
+                        <Label Text="3" VerticalOptions="Center" HorizontalOptions="Center"
+                               FontAttributes="Bold" TextColor="Black"/>
+                    </Frame>
+                </Grid>
+
+                <!--<control:CirularFrame ImageHeight="100" 
+                                      Source="spongbob.png"
+                                      ImageWidth="100" 
+                                      CornerRadius="50"/>
+                <control:CirularFrame Grid.Column="1" 
+                                      Source="happyman.png"
+                                      ImageHeight="150" 
+                                      ImageWidth="150" 
+                                      CornerRadius="75"/>
+                <control:CirularFrame Grid.Column="2" 
+                                      Source="spongbob1.png"
+                                      ImageHeight="100"
+                                      ImageWidth="100" 
+                                      CornerRadius="50"/>-->
+                
+            </Grid>
+            <Frame Grid.Row="2" VerticalOptions="Start"
+                   BackgroundColor="CornflowerBlue" CornerRadius="10"
+                   Margin="0,10" Padding="8">
+                <Grid ColumnDefinitions="*,*,auto,auto">
+                    <Label Text="Mijn ranking"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="White"/>
+                    <Frame Grid.Column="1" Padding="5"
+                           CornerRadius="10"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start">
+                        <Label Text="58." FontAttributes="Bold"
+                               TextColor="Black"/>
+                    </Frame>
+                    <Label Text="1400" Grid.Column="2"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="White"/>
+                    <Frame Grid.Column="3" Padding="2"
+                           CornerRadius="10" HasShadow="True"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           >
+                        <!--<Polygon Points="6,0 0,8.5 11,8.5"
+                                 VerticalOptions="CenterAndExpand"
+                                 HorizontalOptions="CenterAndExpand"
+                                 Fill="black"                                  
+                                 Margin="4"/>-->
+                        <Label
+                            FontFamily="{DynamicResource MaterialFontFamily }"
+                            Text="{x:Static helper:IconFont.Triangle}"
+                            Margin="2" VerticalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            FontSize="Micro"
+                            TextColor="Black" />
+                    </Frame>
+                </Grid>
+            </Frame>           
+                <CollectionView Grid.Row="3">
+                <CollectionView.ItemsSource>
+
+                    <x:Array Type="{x:Type model:Item}">
+                        <model:Item ImageSource="spongbob.png" IsIncreasing="true"
+                     Name= "David Mota" Points="1700" Sequence="1"  />
+                        <model:Item ImageSource="spongbob.png" IsIncreasing="false"
+                     Name= "David Motna" Points="1400" Sequence="2"  />
+                        <model:Item ImageSource="spongbob.png" IsIncreasing="true"
+                     Name= "Old user" Points="1300" Sequence="3"  />
+                       
+                            <model:Item ImageSource="spongbob.png" IsIncreasing="true"
+                     Name= "New User" Points="1200" Sequence="4"  />
+                            <model:Item ImageSource="spongbob.png" IsIncreasing="false"
+                     Name= "John Doe" Points="1800" Sequence="5"  />
+                            <model:Item ImageSource="spongbob.png" IsIncreasing="true"
+                     Name= "Advika Anya" Points="2100" Sequence="6"  />
+                            <model:Item ImageSource="spongbob.png" IsIncreasing="true"
+                     Name= "Ananya" Points="1900" Sequence="7"  />
+                        
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="5" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame  VerticalOptions="Start"
+                   BackgroundColor="LightGray" CornerRadius="10"
+                   Padding="4">
+                                    <Grid ColumnDefinitions="auto,auto,*,auto,auto"
+                                  >
+                                        <Label Text="{Binding Sequence}" FontAttributes="Bold"
+                                       Margin="0,0,5,0"
+                               TextColor="Black" VerticalOptions="Center"/>
+                                        <Frame HasShadow="False" CornerRadius="50" Grid.Column="1"
+                                       Margin="0,0,10,0"
+                               BackgroundColor="White" Padding="0">
+                                            <Grid>
+                                                <Image Source="{Binding ImageSource}"
+                                       ScaleX="1.5" ScaleY="1.5" HeightRequest="35"/>
+                                            </Grid>
+
+
+                                        </Frame>
+                                        <Label Text="{Binding Name}" Grid.Column="2"
+                                       
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="black"/>
+
+                                        <Label Text="{Binding Points}" Grid.Column="3"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           TextColor="Black"/>
+                                        <Frame Grid.Column="4" Padding="2"
+                                   CornerRadius="10" HasShadow="True"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand">
+
+                                            <Label
+                            FontFamily="{DynamicResource MaterialFontFamily }"
+                            Text="{x:Static helper:IconFont.Triangle}"
+                            Margin="2" VerticalTextAlignment="Center"
+                            VerticalOptions="Center"
+                            FontSize="Micro"
+                            TextColor="Black" >
+                                                <Label.Style>
+                                                    <Style TargetType="Label">
+                                                        <Style.Triggers>
+                                                            <DataTrigger TargetType="{x:Type Label}" Binding="{Binding IsIncreasing}"
+                                                             Value="True">
+                                                                <Setter Property="Rotation" Value="180"/>
+
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Label.Style>
+                                            </Label>
+                                        </Frame>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>                 
+        </Grid>
+        
+       
+    </ContentPage.Content>
+</ContentPage>

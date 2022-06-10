@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Leaderboard.Controls"
+             x:Class="Leaderboard.Views.SettingsPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">           
+            <Grid RowDefinitions="auto,auto,auto,auto">
+                <StackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                        >
+                    <Grid>
+                        <Frame HasShadow="False" CornerRadius="82" Padding="4"
+                    Margin="5"
+                    VerticalOptions="Center" HorizontalOptions="CenterAndExpand"                           
+                        BackgroundColor="LightGray">
+                            <Frame HasShadow="True" CornerRadius="80" HorizontalOptions="Center"
+                        BackgroundColor="White" Padding="4">
+                                <Grid>
+                                    <Image x:Name="circleImg" Source="spongbob.png"
+                                HeightRequest="120" ScaleX="1.5" ScaleY="1.5"/>
+                                </Grid>
+                            </Frame>
+
+                        </Frame>
+                    </Grid>
+
+                    <Label Text="Kevin Zijlmans" FontSize="Title" FontAttributes="Bold" TextColor="Black"
+                    HorizontalOptions="Center" Padding="0" Margin="0,10,0,0"/>
+                </StackLayout>
+                <StackLayout Spacing="-4" Grid.Row="1" Margin="20,5">
+                    <Label Text="Naam" TextColor="Black" Opacity="0.8"
+                        FontSize="Small" Margin="2,4"/>
+                    <Frame CornerRadius="10" Padding="0" BackgroundColor="LightGray">
+                        <controls:BorderlessEntry BackgroundColor="LightGray" 
+                                                Text="Kevin" FontSize="Medium"
+                            TextColor="Black" Margin="15,0"  />
+                    </Frame>
+                    <Label Text="Gebruikersnaam" TextColor="Black" Opacity="0.8"
+                        FontSize="Small" Margin="2,8,2,4"/>
+                    <Frame CornerRadius="10" Padding="0" BackgroundColor="LightGray">
+                        <controls:BorderlessEntry BackgroundColor="LightGray" 
+                                                Text="Kevin" FontSize="Medium"
+                            TextColor="Black" Margin="15,0"  />
+                    </Frame>
+                    <Label Text="Whatchtwood" TextColor="Black" Opacity="0.8"
+                        FontSize="Small" Margin="2,8,2,4"/>
+                    <Frame CornerRadius="10" Padding="0" BackgroundColor="LightGray">
+                        <controls:BorderlessEntry BackgroundColor="LightGray" IsPassword="True"
+                                                Text="Kevin31eq" FontSize="Medium"
+                            TextColor="Black" Margin="15,0"  />
+                    </Frame>
+                    <Label Text="E-Mail" TextColor="Black" Opacity="0.8"
+                        FontSize="Small" Margin="2,8,2,4"/>
+                    <Frame CornerRadius="10" Padding="0" BackgroundColor="LightGray">
+                        <controls:BorderlessEntry BackgroundColor="LightGray" Keyboard="Email"
+                                                Text="Kevin31eqzilmil@monta.nl" FontSize="Medium"
+                            TextColor="Black" Margin="15,0"  />
+                    </Frame>
+
+                    <Button Text="Uitloggen" BorderColor="LightGray" Margin="0,30,0,0"
+                        CornerRadius="10"
+                        BorderWidth="3" BackgroundColor="White"
+                        FontSize="Small" FontAttributes="Bold"
+                        TextColor="Blue" />
+
+                </StackLayout>
+                <Grid Grid.Row="2" Margin="20,5" RowDefinitions="auto,auto" >
+                    <Label Text="Algemeen" TextColor="Black" FontAttributes="Bold" 
+                        Margin="20,0"
+                        FontSize="Subtitle"/>
+                    <Frame Grid.Row="1" HasShadow="False" BorderColor="LightGray" 
+                        CornerRadius="10" Padding="0" 
+                        HeightRequest="209"
+                        HorizontalOptions="Start" VerticalOptions="Start">
+                        <TableView VerticalOptions="Start" Margin="2" Intent="Form"
+                                RowHeight="50">
+                            <TableSection >
+                                <SwitchCell Text="Geluidseffecten" On="True"/>
+                                <SwitchCell Text="Trillen" On="False"/>
+                                <SwitchCell Text="Motivatieberichten" On="True"/>
+                                <SwitchCell Text="Overige medingen" On="True"/>
+                            </TableSection>
+                            <TableSection></TableSection>
+                        </TableView>
+                    </Frame>
+
+                </Grid>
+                <Grid Grid.Row="3" Margin="20,5" RowDefinitions="auto,auto">
+                        <Label Text="Meldingen" TextColor="Black" FontAttributes="Bold" 
+                           Margin="20,0"
+                           FontSize="Subtitle"/>
+                        <Frame Grid.Row="1" HasShadow="False" BorderColor="LightGray" 
+                               CornerRadius="10" Padding="0" 
+                               HeightRequest="155"
+                           HorizontalOptions="Start" VerticalOptions="Start">
+                            <TableView VerticalOptions="Fill" RowHeight="50">
+                                <TableSection >
+                                    <SwitchCell Text="Ofenherien" On="True"/>
+                                    <SwitchCell Text="Slim implannen" On="False"/>
+                                <ViewCell >
+                                    <Grid ColumnDefinitions="*,auto"  >
+                                        <Label Text="Motivatieberichten" TextColor="LightGray"
+                                              VerticalOptions="Center" Margin="15" />
+                                        <Label Text="18:00" TextColor="LightGray"
+                                               Margin="12"
+                                               Grid.Column="1"
+                                               HorizontalOptions="End"
+                                               VerticalOptions="Center"/>
+                                    </Grid>
+                                </ViewCell>
+
+                            </TableSection>
+                            </TableView>
+                        </Frame>
+
+
+                    </Grid>
+                <Grid Grid.Row="4" Margin="20,5" RowDefinitions="auto,auto" >
+                    
+                    <Frame Grid.Row="1" HasShadow="False" BorderColor="LightGray" 
+                        CornerRadius="10" Padding="0" 
+                        HeightRequest="209"
+                        HorizontalOptions="Start" VerticalOptions="Start">
+                        <TableView VerticalOptions="Start" Margin="2" Intent="Form"
+                                RowHeight="50">
+                            <TableSection >
+                                <SwitchCell Text="Niewuw bericht" On="True"/>
+                                <SwitchCell Text="Niewuw volcher" On="False"/>
+                                <SwitchCell Text="Vreindenactivieties" On="True"/>
+                                <SwitchCell Text="Niewuw post" On="True"/>
+                            </TableSection>
+                            <TableSection></TableSection>
+                        </TableView>
+                    </Frame>
+
+                </Grid>
+            </Grid>  
+                
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage> 
